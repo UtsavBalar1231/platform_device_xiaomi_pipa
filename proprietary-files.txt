@@ -276,7 +276,6 @@ vendor/lib64/hw/camera.qcom.so|7ce40a731051e0b2d9180fe8e5237a58c3f78b81
 vendor/lib64/hw/com.qti.chi.override.so|78f66c4e6295a73192389726ec2e14a6cc0ad563
 vendor/lib64/libAF.so|32cf285e83de29d669a2e856ac957492a0ea809c
 vendor/lib64/libFaceCenterAlgo.so|d0af9d5b2c37792d431bf2c2f687aabb4578d2a8
-vendor/lib64/libI420colorconvert.so|7bd96e18f1db65d1412b0a635831d960ce4c298b
 vendor/lib64/libSNPE.so|1b20ffb8a092be14f65eb200e5089e353324948c
 vendor/lib64/libXMFaceFocus.so|52e57f5113e4f98d0824574c7a3689deeaeca5a9
 vendor/lib64/libalAILDC.so|035240bfa042b20be8dd8d0ec71c3f43ce367a7b
