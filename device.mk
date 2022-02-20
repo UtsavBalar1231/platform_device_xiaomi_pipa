@@ -199,6 +199,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.volume.filenames_mode="aes-256-cts" \
     ro.hardware.keystore_desede=true
 
+# LMKD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.lmk.force_inkernel_lmk=true
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
