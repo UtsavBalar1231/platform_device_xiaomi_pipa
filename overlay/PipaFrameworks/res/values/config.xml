@@ -438,4 +438,7 @@
          This can be overridden to false for devices that support voice and/or sms . -->
     <bool name="config_mobile_data_capable">false</bool>
 
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+
 </resources>
