@@ -1261,7 +1261,6 @@ vendor/lib64/mediadrm/libwvdrmengine.so|95c3f9ca4ac8a3e73c9cbd260ca8fb1ccc3a056b
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
 
 # WiFi - MIUI
-vendor/bin/cnss-daemon|fb67cd00dcd302b249e7fdf0b6f3ddaf51e87dfe
 vendor/bin/nv_mac|5de575cd0c3d0d5c79dcfd77df87eb69286da800
 
 # WiFi Display
