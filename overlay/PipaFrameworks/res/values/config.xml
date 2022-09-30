@@ -441,4 +441,7 @@
     <!-- This device does not allow sms service. -->
     <bool name="config_sms_capable">false</bool>
 
+    <!-- This device is not "voice capable". -->
+    <bool name="config_voice_capable">false</bool>
+
 </resources>
