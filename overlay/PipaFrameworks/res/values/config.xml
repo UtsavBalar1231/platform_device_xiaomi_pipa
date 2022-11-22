@@ -444,4 +444,8 @@
     <!-- This device is not "voice capable". -->
     <bool name="config_voice_capable">false</bool>
 
+    <!-- This device is a wifi only tablet which does not support WEA.
+         It should not receive CB messages. -->
+    <bool name="config_disable_all_cb_messages">true</bool>
+
 </resources>
