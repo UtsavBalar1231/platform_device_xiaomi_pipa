@@ -1,0 +1,2 @@
+# TODO(b/246793311): Clean up a temporary property once pa/2342172 lands
+debug.sf.ignore_hwc_physical_display_orientation u:object_r:surfaceflinger_prop:s0 exact bool

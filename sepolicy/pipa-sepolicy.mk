@@ -36,6 +36,7 @@ BOARD_SEPOLICY_DIRS += \
 
 # Xiaomi Private Sepolicy
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/display \
     device/xiaomi/pipa/sepolicy/private/xiaomi/xiaomiparts
 
 # Xiaomi Public Sepolicy
