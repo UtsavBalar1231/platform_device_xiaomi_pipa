@@ -397,4 +397,7 @@
     <!-- Default value for performant auth feature. -->
     <bool name="config_performantAuthDefault">true</bool>
 
+    <!-- The default volume for the notification stream -->
+    <integer name="config_audio_notif_vol_default">0</integer>
+
 </resources>
