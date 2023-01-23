@@ -448,4 +448,8 @@
          It should not receive CB messages. -->
     <bool name="config_disable_all_cb_messages">true</bool>
 
+    <!-- Enable the system motion prediction model. -->
+    <bool name="config_enableMotionPrediction">true</bool>
+    <integer name="config_motionPredictionOffsetNanos">20000000</integer> <!-- 20 ms -->
+
 </resources>
