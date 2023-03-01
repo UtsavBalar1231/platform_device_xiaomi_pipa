@@ -120,6 +120,9 @@ KERNEL_DEFCONFIG := vendor/pipa_user_defconfig
 
 KERNEL_FULL_LLVM := true
 
+# Lineage Health
+TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 

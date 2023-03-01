@@ -36,6 +36,9 @@ on boot
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
     write /sys/block/sda/queue/wbt_lat_usec 75000
 
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/input_suspend
+
     chown system system /dev/xiaomi-touch
     chmod 0664 /dev/xiaomi-touch
 
