@@ -318,6 +318,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.neuralnetworks@1.3.vendor
 
+# Window Extensions
+$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
 # WLAN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg_qca6390.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
