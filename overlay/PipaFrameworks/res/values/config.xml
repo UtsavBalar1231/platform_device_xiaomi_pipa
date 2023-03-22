@@ -452,4 +452,7 @@
     <bool name="config_enableMotionPrediction">true</bool>
     <integer name="config_motionPredictionOffsetNanos">-4000000</integer> <!-- -4 ms -->
 
+    <!-- Show shortcut hit string in context menu. -->
+    <bool name="config_showMenuShortcutsWhenKeyboardPresent">true</bool>
+
 </resources>
