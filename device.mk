@@ -205,7 +205,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Overlays
 PRODUCT_PACKAGES += \
