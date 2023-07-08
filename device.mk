@@ -121,9 +121,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
-PRODUCT_PACKAGES += \
-    libpiex_shim
-
 # Charging
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.pps.disallowed=1 \
@@ -146,10 +143,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_touch_timer_ms=4000 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true
-
-# DPM
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.dpmhalservice.enable=1
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -317,6 +310,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.neuralnetworks@1.3.vendor \
+    android.hardware.wifi.hostapd@1.0.vendor
 
 # VPP tunings
 PRODUCT_COPY_FILES += \
