@@ -1,0 +1,2 @@
+# Linearmotor Vibrator
+add_service(system_server, linearmotor_vibrator_service);

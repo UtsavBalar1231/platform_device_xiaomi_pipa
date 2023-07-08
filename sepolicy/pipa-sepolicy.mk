@@ -13,11 +13,14 @@
 # limitations under the License.
 
 # QCOM Sepolicy
-BOARD_SEPOLICY_DIRS += \
+BOARD_VENDOR_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/qcom
 
 # Xiaomi Sepolicy
-BOARD_SEPOLICY_DIRS += \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/vibrator
+
+BOARD_VENDOR_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/audio \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/bluetooth \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/battery \
