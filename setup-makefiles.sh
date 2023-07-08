@@ -9,7 +9,7 @@
 
 set -e
 
-DEVICE=alioth
+DEVICE=pipa
 VENDOR=xiaomi
 
 # Load extract utilities and do some sanity checks.

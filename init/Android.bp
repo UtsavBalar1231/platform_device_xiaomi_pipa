@@ -19,8 +19,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.alioth.rc",
-    src: "init.alioth.rc",
+    name: "init.pipa.rc",
+    src: "init.pipa.rc",
     sub_dir: "init",
     vendor: true,
 }
@@ -33,9 +33,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "ueventd.alioth.rc",
+    name: "ueventd.pipa.rc",
     filename: "ueventd.rc",
-    src: "ueventd.alioth.rc",
+    src: "ueventd.pipa.rc",
     device_specific: true,
 }
 
@@ -58,10 +58,10 @@ sh_binary {
 }
 
 cc_library_static {
-    name: "libinit_alioth",
+    name: "libinit_pipa",
     recovery_available: true,
     shared_libs: ["libbase"],
-    srcs: ["init_alioth.cpp"],
+    srcs: ["init_pipa.cpp"],
     include_dirs: [
         "system/core/init",
         "system/libbase/include"

@@ -111,8 +111,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt \
-    $(LOCAL_PATH)/configs/camera/st_license.lic:$(TARGET_COPY_OUT_VENDOR)/etc/camera/st_license.lic
+    $(LOCAL_PATH)/configs/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -127,9 +126,6 @@ PRODUCT_PACKAGES += \
 
 # Charging
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.cp.fcc_main_ua=400000 \
-    persist.vendor.cp.taper_term_mv=7000 \
-    persist.vendor.cp.qc3p5_vfloat_offset_uv=110000 \
     persist.vendor.pps.disallowed=1 \
     persist.vendor.hvdcp_opti.disallowed=1
 
@@ -137,33 +133,19 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# Consumer IR
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    android.hardware.ir@1.0-service
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.display.paneltype=2 \
     ro.vendor.display.sensortype=2 \
-    vendor.display.qdcm.mode_combine=1 \
-    vendor.display.use_layer_ext=1 \
-    vendor.display.defer_fps_frame_count=2
+    vendor.display.qdcm.mode_combine=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=4000 \
     ro.surface_flinger.set_touch_timer_ms=4000 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # DPM
 PRODUCT_VENDOR_PROPERTIES += \
@@ -187,18 +169,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Fingerprint
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/fingerprint/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/fingerprint/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# GPS
-LOC_HIDL_VERSION = 4.0
 
 # Gatekeeper
 PRODUCT_VENDOR_PROPERTIES += \
@@ -221,12 +194,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.alioth.rc \
+    init.pipa.rc \
     init.mi.btmac.sh \
     init.mi.usb.sh \
     init.qti.dcvs.sh \
     init.target.rc \
-    ueventd.alioth.rc
+    ueventd.pipa.rc
+
+# Json
+PRODUCT_PACKAGES += \
+    libjson
 
 # Keymaster
 PRODUCT_VENDOR_PROPERTIES += \
@@ -238,27 +215,17 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# NFC
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # Overlays
 PRODUCT_PACKAGES += \
-    AliothCarrierConfig \
-    AliothFrameworks \
-    AliothSettings \
-    AliothSystemUI \
-    AOSPAAliothFrameworks \
-    AOSPAAliothSystemUI \
+    AOSPAPipaFrameworks \
+    AOSPAPipaSystemUI \
     FrameworksResTarget \
-    SettingsOverlayM2012K11AG \
-    SettingsOverlayM2012K11AI \
-    SettingsProviderM2012K11AC \
-    SettingsProviderM2012K11AG \
-    SettingsProviderM2012K11AI \
-    WifiOverlayM2012K11AC \
-    WifiOverlayM2012K11AG \
-    WifiOverlayM2012K11AI \
+    PipaCarrierConfig \
+    PipaFrameworks \
+    PipaSettings \
+    PipaSettingsProvider \
+    PipaSystemUI \
+    PipaWifiOverlay \
     WifiResTarget
 
 # Partitions
@@ -267,14 +234,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := kona
 
-# QCRIL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.radio.cdma_cap=true \
-    persist.vendor.radio.data_con_rprt=1 \
-    persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.force_ltd_sys_ind=1 \
-    persist.vendor.radio.manual_nw_rej_ct=1
-
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
@@ -282,19 +241,14 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     display \
-    gps \
     init \
     media \
-    nfc \
     overlay \
     perf \
-    telephony \
     usb \
     vibrator \
     wfd \
     wlan
-
-TARGET_NFC_SKU := pro
 
 # Sensors
 PRODUCT_VENDOR_PROPERTIES += \
@@ -322,7 +276,7 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # SoC Property
 PRODUCT_VENDOR_PROPERTIES += \
@@ -330,10 +284,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Storage
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.fuse.passthrough.enable=true \
     ro.incremental.enable=yes
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Subsystem silent restart
 PRODUCT_VENDOR_PROPERTIES += \
@@ -354,7 +305,7 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
+$(call inherit-product, vendor/xiaomi/pipa/pipa-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \

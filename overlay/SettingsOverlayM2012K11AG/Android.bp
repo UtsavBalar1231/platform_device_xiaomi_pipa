@@ -1,4 +1,0 @@
-runtime_resource_overlay {
-    name: "SettingsOverlayM2012K11AG",
-    product_specific: true,
-}
