@@ -239,7 +239,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     overlay \
     perf \
     usb \
-    vibrator \
     wfd \
     wlan
 
