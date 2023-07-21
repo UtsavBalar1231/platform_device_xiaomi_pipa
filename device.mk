@@ -212,7 +212,6 @@ PRODUCT_PACKAGES += \
     AOSPAPipaFrameworks \
     AOSPAPipaSystemUI \
     FrameworksResTarget \
-    PipaCarrierConfig \
     PipaFrameworks \
     PipaSettings \
     PipaSettingsProvider \
