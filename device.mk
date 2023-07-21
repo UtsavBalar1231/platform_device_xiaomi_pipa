@@ -209,6 +209,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     AOSPAPipaFrameworks \
     AOSPAPipaSystemUI \
+    FrameworksRes23043RP34C \
     PipaFrameworks \
     PipaSettings \
     PipaSettingsOverlay \
