@@ -247,6 +247,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+# Peripheral Manager
+PRODUCT_PACKAGES += \
+    XiaomiPeripheralManager
+
 # Platform
 TARGET_BOARD_PLATFORM := kona
 
