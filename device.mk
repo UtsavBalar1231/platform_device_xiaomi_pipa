@@ -274,6 +274,10 @@ PRODUCT_PACKAGES += \
     libjson \
     libsensorndkbridge
 
+# Setup Wizard
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.setupwizard.rotation_locked=false
+
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 33
 
