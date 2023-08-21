@@ -217,6 +217,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 
+# Multi-Gen LRU
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.device_config.mglru_native.lru_gen_config=core
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
