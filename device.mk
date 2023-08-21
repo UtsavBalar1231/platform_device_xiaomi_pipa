@@ -243,6 +243,10 @@ PRODUCT_PACKAGES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Platform
 TARGET_BOARD_PLATFORM := kona
 
