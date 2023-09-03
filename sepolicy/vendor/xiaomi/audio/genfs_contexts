@@ -1,2 +1,0 @@
-# mm_hardware
-genfscon sysfs /mm_hardware u:object_r:sysfs_mm_hardware:s0

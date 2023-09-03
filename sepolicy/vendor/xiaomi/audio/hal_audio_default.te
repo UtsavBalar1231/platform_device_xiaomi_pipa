@@ -12,6 +12,3 @@ binder_call(hal_audio_default, hal_sensors_default)
 
 # Allow Audio hal to set audio properties
 set_prop(hal_audio_default, vendor_audio_prop)
-
-# Allow Audio hal to access /sys/mm_hardware
-r_dir_file(hal_audio_default, sysfs_mm_hardware)
