@@ -75,6 +75,7 @@ vendor/lib/rfsa/adsp/misound_res_spk4ch.bin|16add368f6d9db061beb89a9d662988b842b
 vendor/etc/audio_configs.xml|eb74ffb11b3b5190bb8070f84de0798ed53ebc87
 vendor/etc/audio_configs_stock.xml|0bd072df25ff1641701bf9fa066bdfefd3b52565
 vendor/etc/audio_effects.conf|49e00ca08a1cc3688d2f88bbf67fae5a5ebeabb4
+vendor/etc/audio_effects.xml|d63f0289e1e2209a2c27c70eaba417c4d688def6
 vendor/etc/audio_io_policy.conf|7029d619418102330e4bd2187b8ab56b4b7cf26b
 vendor/etc/audio_platform_info.xml|cbbe1bc50e43aa18f67a726a773c9f32549da609
 vendor/etc/audio_platform_info_intcodec.xml|08cd66407f03ff47223f69e6df0da5bc3897877a
@@ -774,6 +775,25 @@ vendor/bin/ks|2bcc675556cd146a8a785145f9d2caa1b659b185
 vendor/bin/mdm_helper_proxy|e7ba5764336a32454e4f8de6ff3e1a9c9c2a61bd
 vendor/bin/mdm_helper|aeb8aad56538231d57b7e945c918da39f0c19941
 vendor/lib64/libmdmimgload.so|5f9a20c24dd7f981eec4618769ef74ade0704d54
+
+# Media (Dolby) - MIUI
+vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|ff827406bbcd1c82e790730bb017b7af38850004
+vendor/etc/dolby/dax-default.xml|d1e43b428d1799db5567ca1ae9ea24c886b88c6d
+vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
+vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
+vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|c8095f649de19b80271fb429b4b6b439297a0678
+vendor/lib/libdapparamstorage.so|d1952f09354f414238e5bd0f57dd0d3f85b8f769
+vendor/lib/libdeccfg.so|aab09ce6d14c428d96e821bcd4418399c139a3e7
+vendor/lib/libstagefright_soft_ac4dec.so|fd5d42a03683bc89edda0b2d476226c342c7f00a
+vendor/lib/libstagefright_soft_ddpdec.so|5474e4b03631616dbe2e18bbfc7c8928420cf748
+vendor/lib/soundfx/libhwdap.so|808b70062a609bc231209f7b6c724c64ce85b910
+vendor/lib/soundfx/libswgamedap.so|e48940fe176b91169af7dc178f376deea340d22d
+vendor/lib/soundfx/libswvqe.so|1cc2fa907f44a81d43adc70e9fddc22e1d305110
+vendor/lib/vendor.dolby.hardware.dms@2.0.so|2bf537bbf5c413527e5c648b8e63b95f904f7532
+vendor/lib64/libdapparamstorage.so|a8e3bb20ee8579a13d5beef17a0ad251055e9d7b
+vendor/lib64/libdlbdsservice.so|43d95fbe2ce9ce7e60ad412e02f2c3ff49d4225d
+vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|7c95205a1b05b2d674303c61b8f29486f085d090
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so|2020b5fd9abac65520224069bbe75d5e76d3f158
 
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
