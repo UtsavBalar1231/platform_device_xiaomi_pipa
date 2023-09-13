@@ -233,6 +233,10 @@ TARGET_COMMON_QTI_COMPONENTS := \
     wfd \
     wlan
 
+# RemovePackages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Sensors
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.amd_for_powercontrol=true \
