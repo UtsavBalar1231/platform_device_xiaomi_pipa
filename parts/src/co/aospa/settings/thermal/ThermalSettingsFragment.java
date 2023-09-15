@@ -1,19 +1,19 @@
 /**
  * Copyright (C) 2020 The LineageOS Project
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.settings.refreshrate;
+package co.aospa.settings.thermal;
 
 import android.annotation.Nullable;
 import android.content.Context;
@@ -42,7 +42,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.settingslib.applications.ApplicationsState;
 
-import org.lineageos.settings.R;
+import co.aospa.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +50,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RefreshSettingsFragment extends PreferenceFragment
+public class ThermalSettingsFragment extends PreferenceFragment
         implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
@@ -60,8 +60,9 @@ public class RefreshSettingsFragment extends PreferenceFragment
     private Map<String, ApplicationsState.AppEntry> mEntryMap =
             new HashMap<String, ApplicationsState.AppEntry>();
 
-    private RefreshUtils mRefreshUtils;
     private RecyclerView mAppsRecyclerView;
+
+    private ThermalUtils mThermalUtils;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -78,20 +79,20 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
 
-        mRefreshUtils = new RefreshUtils(getActivity());
+        mThermalUtils = new ThermalUtils(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.refresh_layout, container, false);
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.thermal_layout, container, false);
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mAppsRecyclerView = view.findViewById(R.id.refresh_rv_view);
+        mAppsRecyclerView = view.findViewById(R.id.thermal_rv_view);
         mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
     }
@@ -100,7 +101,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle(getResources().getString(R.string.refresh_title));
+        getActivity().setTitle(getResources().getString(R.string.thermal_title));
         rebuild();
     }
 
@@ -194,13 +195,21 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
     private int getStateDrawable(int state) {
         switch (state) {
-            case RefreshUtils.STATE_STANDARD:
-                return R.drawable.ic_refresh_60;
-            case RefreshUtils.STATE_EXTREME:
-                return R.drawable.ic_refresh_144;
-            case RefreshUtils.STATE_DEFAULT:
+            case ThermalUtils.STATE_BENCHMARK:
+                return R.drawable.ic_thermal_benchmark;
+            case ThermalUtils.STATE_BROWSER:
+                return R.drawable.ic_thermal_browser;
+            case ThermalUtils.STATE_CAMERA:
+                return R.drawable.ic_thermal_camera;
+            case ThermalUtils.STATE_DIALER:
+                return R.drawable.ic_thermal_dialer;
+            case ThermalUtils.STATE_GAMING:
+                return R.drawable.ic_thermal_gaming;
+            case ThermalUtils.STATE_STREAMING:
+                return R.drawable.ic_thermal_streaming;
+            case ThermalUtils.STATE_DEFAULT:
             default:
-                return R.drawable.ic_refresh_default;
+                return R.drawable.ic_thermal_default;
         }
     }
 
@@ -227,9 +236,13 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
         private final LayoutInflater inflater;
         private final int[] items = {
-                R.string.refresh_default,
-                R.string.refresh_standard,
-                R.string.refresh_extreme
+                R.string.thermal_default,
+                R.string.thermal_benchmark,
+                R.string.thermal_browser,
+                R.string.thermal_camera,
+                R.string.thermal_dialer,
+                R.string.thermal_gaming,
+                R.string.thermal_streaming
         };
 
         private ModeAdapter(Context context) {
@@ -291,34 +304,35 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
         @NonNull
         @Override
-         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.refresh_list_item, parent, false));
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            ViewHolder holder = new ViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.thermal_list_item, parent, false));
+            Context context = holder.itemView.getContext();
+            holder.mode.setAdapter(new ModeAdapter(context));
+            holder.mode.setOnItemSelectedListener(this);
+            return holder;
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            Context context = holder.itemView.getContext();
-
             ApplicationsState.AppEntry entry = mEntries.get(position);
 
             if (entry == null) {
                 return;
             }
-            holder.mode.setAdapter(new ModeAdapter(context));
-            holder.mode.setOnItemSelectedListener(this);
+
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.mode.performClick());
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
-            int packageState = mRefreshUtils.getStateForPackage(entry.info.packageName);
+            int packageState = mThermalUtils.getStateForPackage(entry.info.packageName);
             holder.mode.setSelection(packageState, false);
             holder.mode.setTag(entry);
             holder.stateIcon.setImageResource(getStateDrawable(packageState));
         }
 
         private void setEntries(List<ApplicationsState.AppEntry> entries,
-                List<String> sections, List<Integer> positions) {
+                                List<String> sections, List<Integer> positions) {
             mEntries = entries;
             mSections = sections.toArray(new String[sections.size()]);
             mPositions = new int[positions.size()];
@@ -332,10 +346,9 @@ public class RefreshSettingsFragment extends PreferenceFragment
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             final ApplicationsState.AppEntry entry = (ApplicationsState.AppEntry) parent.getTag();
-
-            int currentState = mRefreshUtils.getStateForPackage(entry.info.packageName);
+            int currentState = mThermalUtils.getStateForPackage(entry.info.packageName);
             if (currentState != position) {
-                mRefreshUtils.writePackage(entry.info.packageName, position);
+                mThermalUtils.writePackage(entry.info.packageName, position);
                 notifyDataSetChanged();
             }
         }

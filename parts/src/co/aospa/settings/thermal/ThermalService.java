@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.refreshrate;
+package co.aospa.settings.thermal;
 
 import android.app.ActivityManager;
 import android.app.ActivityTaskManager;
@@ -22,29 +22,31 @@ import android.app.ActivityTaskManager.RootTaskInfo;
 import android.app.IActivityTaskManager;
 import android.app.TaskStackListener;
 import android.app.Service;
+import android.app.TaskStackListener;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 import android.os.RemoteException;
+import android.util.Log;
 
-public class RefreshService extends Service {
+public class ThermalService extends Service {
 
-    private static final String TAG = "RefreshService";
-    private static final boolean DEBUG = true;
+    private static final String TAG = "ThermalService";
+    private static final boolean DEBUG = false;
 
     private String mPreviousApp;
-    private RefreshUtils mRefreshUtils;
+    private ThermalUtils mThermalUtils;
+
     private IActivityTaskManager mActivityTaskManager;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             mPreviousApp = "";
+            mThermalUtils.setDefaultThermalProfile();
         }
     };
 
@@ -57,7 +59,7 @@ public class RefreshService extends Service {
         } catch (RemoteException e) {
             // Do nothing
         }
-        mRefreshUtils = new RefreshUtils(this);
+        mThermalUtils = new ThermalUtils(this);
         registerReceiver();
         super.onCreate();
     }
@@ -88,17 +90,13 @@ public class RefreshService extends Service {
                 if (info == null || info.topActivity == null) {
                     return;
                 }
+
                 String foregroundApp = info.topActivity.getPackageName();
-                if (!mRefreshUtils.isAppInList) {
-                    mRefreshUtils.getOldRate();
-                }
                 if (!foregroundApp.equals(mPreviousApp)) {
-                    mRefreshUtils.setRefreshRate(foregroundApp);
+                    mThermalUtils.setThermalProfile(foregroundApp);
                     mPreviousApp = foregroundApp;
                 }
-            } catch (Exception e) {
-                // Do nothing
-            }
+            } catch (Exception e) {}
         }
     };
 }

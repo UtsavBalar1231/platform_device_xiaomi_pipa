@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.thermal;
+package co.aospa.settings.thermal;
 
 import android.os.Bundle;
 import android.view.MenuItem;

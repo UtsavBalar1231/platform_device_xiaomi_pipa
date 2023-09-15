@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package co.aospa.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.lineageos.settings.thermal.ThermalUtils;
-import org.lineageos.settings.refreshrate.RefreshUtils;
+import co.aospa.settings.thermal.ThermalUtils;
+import co.aospa.settings.refreshrate.RefreshUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
