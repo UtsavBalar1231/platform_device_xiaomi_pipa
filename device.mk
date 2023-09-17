@@ -164,6 +164,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Firmware
+$(call inherit-product-if-exists, vendor/xiaomi/firmware/pipa/config.mk)
+
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
