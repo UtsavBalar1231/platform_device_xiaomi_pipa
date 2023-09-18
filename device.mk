@@ -228,6 +228,7 @@ PRODUCT_PACKAGES += \
     AOSPAPipaSystemUI \
     FrameworksRes23043RP34C \
     FrameworksResTarget \
+    PipaFlipFlap \
     PipaFrameworks \
     PipaSettings \
     PipaSettingsProvider \
@@ -314,6 +315,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     androidx.window.extensions \
+    FlipFlap \
     RemoveTelephonyPackages
 
 # Thermal
