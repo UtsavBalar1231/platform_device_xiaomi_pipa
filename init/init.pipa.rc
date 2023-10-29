@@ -77,5 +77,5 @@ service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
     oneshot
     disabled
 
-on property:persist.sys.parts.pen=*
-    exec /system/bin/xiaomi-pen ${persist.sys.parts.pen}
+on property:persist.vendor.parts.pen=*
+    exec /vendor/bin/xiaomi-pen ${persist.vendor.parts.pen}
