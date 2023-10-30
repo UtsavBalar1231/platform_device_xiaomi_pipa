@@ -36,6 +36,9 @@ on boot
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
     write /sys/block/sda/queue/wbt_lat_usec 75000
 
+    chown system system /dev/xiaomi-touch
+    chmod 0664 /dev/xiaomi-touch
+
 on property:vendor.post_boot.parsed=1
     # configure input boost settings
     write /sys/devices/system/cpu/cpu_boost/input_boost_freq "0:1344000"
@@ -77,5 +80,12 @@ service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
     oneshot
     disabled
 
+service xiaomi-pen /vendor/bin/xiaomi-pen ${persist.vendor.parts.pen}
+    class main
+    user system
+    group system input
+    oneshot
+    disabled
+
 on property:persist.vendor.parts.pen=*
-    exec /vendor/bin/xiaomi-pen ${persist.vendor.parts.pen}
+    start xiaomi-pen
