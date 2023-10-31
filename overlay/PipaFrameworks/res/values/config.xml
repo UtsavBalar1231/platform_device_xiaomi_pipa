@@ -400,7 +400,10 @@
     <!-- The default volume for the notification stream -->
     <integer name="config_audio_notif_vol_default">0</integer>
 
-    <!-- Volume policy -->
+	<!-- Volume policy -->
+    <!-- Strongly consider keeping these 2 values in sync - otherwise vol up/vol down have confusing
+    asymmetric behavior, as in b/279645379 -->
     <bool name="config_volume_down_to_enter_silent">true</bool>
+	<bool name="config_volume_up_to_exit_silent">true</bool>
 
 </resources>
