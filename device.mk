@@ -226,6 +226,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/Xiaomi_Keyboard.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Xiaomi_Keyboard.idc
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/keylayout/Xiaomi_Smart_Pen_Keyboard.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Xiaomi_Smart_Pen_Keyboard.kl
+
 # One-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
