@@ -32,3 +32,17 @@ cc_binary {
         "xiaomi-pen.cpp",
     ],
 }
+
+cc_binary {
+    name: "xiaomi-keyboard",
+    vendor: true,
+    srcs: [
+        "xiaomi-keyboard.cpp",
+    ],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libsensorndkbridge",
+    ],
+}
