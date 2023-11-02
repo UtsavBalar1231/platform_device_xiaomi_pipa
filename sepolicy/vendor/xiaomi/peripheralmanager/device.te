@@ -1,2 +1,5 @@
 # Xiaomi Touch
 type xiaomi_touch_device, dev_type;
+
+# Xiaomi Keyboard
+type xiaomi_keyboard_device, dev_type;
