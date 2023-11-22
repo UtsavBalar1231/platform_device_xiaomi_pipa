@@ -222,6 +222,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
+# One-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
+
 # Overlays
 PRODUCT_PACKAGES += \
     AOSPAPipaFrameworks \
