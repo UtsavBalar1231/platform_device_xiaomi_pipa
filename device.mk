@@ -116,10 +116,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.pps.disallowed=1 \
     persist.vendor.hvdcp_opti.disallowed=1
 
-# Config Store
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
