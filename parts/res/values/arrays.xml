@@ -50,4 +50,17 @@
         <item>50,34,18,2,-14,-6,2,-2,-6,-26,-46,-26,-6,-2,2,2,2,2,2,2</item>
         <item>40,24,8,8,8,-4,-16,-12,-8,-32,-56,-24,8,8,8,8,8,8,8,8</item>
     </string-array>
+
+    <string-array name="rotate_tweaks_entries">
+        <item>@string/rotate_default</item>
+        <item>@string/rotate_lock</item>
+        <item>@string/rotate_restore</item>
+    </string-array>
+
+    <string-array name="rotate_tweaks_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
