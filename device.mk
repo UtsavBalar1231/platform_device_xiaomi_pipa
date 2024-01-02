@@ -199,7 +199,8 @@ PRODUCT_PACKAGES += \
     PipaSettingsProvider \
     PipaSystemUI \
     PipaWifiOverlay \
-    WifiResTarget
+    WifiResTarget \
+    WifiMainline
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
