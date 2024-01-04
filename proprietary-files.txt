@@ -155,7 +155,6 @@ vendor/lib/libqtigef.so|3fba1e7a22a0b75be6bace643aaa8ead110c1233
 vendor/lib/libresampler.so|8edd3e46d46ad53469487f172219aec3a5a840b5
 vendor/lib/libsmwrapper.so|71a8166b84c4c9a06f1308370d23e68a1b243e0e
 vendor/lib/libssrec.so|e4f2fe3c8109a99dbf76affc2a02fd68e249060d
-vendor/lib/libstagefright_soft_qtiflacdec.so|d6764d45dc05e7d48f70f322847d089a6c668971
 vendor/lib/libsurround_3mic_proc.so|e8e086123e0c1dc17f008f97edb3611cd4c702e1
 vendor/lib/libtinycompress.so|88d37c74a1ba4c27910d08a4a6d323612e2da99d
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so|ed13a1c435bbc1320ceedeafab62db39fec2e34d
@@ -786,6 +785,7 @@ vendor/lib/libdapparamstorage.so|d1952f09354f414238e5bd0f57dd0d3f85b8f769
 vendor/lib/libdeccfg.so|aab09ce6d14c428d96e821bcd4418399c139a3e7
 vendor/lib/libstagefright_soft_ac4dec.so|fd5d42a03683bc89edda0b2d476226c342c7f00a
 vendor/lib/libstagefright_soft_ddpdec.so|5474e4b03631616dbe2e18bbfc7c8928420cf748
+vendor/lib/libstagefright_soft_qtiflacdec.so|d6764d45dc05e7d48f70f322847d089a6c668971
 vendor/lib/soundfx/libhwdap.so|808b70062a609bc231209f7b6c724c64ce85b910
 vendor/lib/soundfx/libswgamedap.so|e48940fe176b91169af7dc178f376deea340d22d
 vendor/lib/soundfx/libswvqe.so|1cc2fa907f44a81d43adc70e9fddc22e1d305110
