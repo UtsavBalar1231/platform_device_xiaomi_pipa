@@ -198,15 +198,12 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     AOSPAPipaFrameworks \
     AOSPAPipaSystemUI \
-    FrameworksResTarget \
     PipaFrameworks \
     PipaSettings \
     PipaSettingsOverlay \
     PipaSettingsProvider \
     PipaSystemUI \
-    PipaWifiOverlay \
-    WifiResTarget \
-    WifiMainline
+    PipaWifiOverlay
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
