@@ -1,4 +1,4 @@
-# All the pinned blobs from MIUI are extracted from miui_PIPAGlobal_V14.0.8.0.TMZMIXM_f64fab3888_13.0
+# All the pinned blobs from MIUI are extracted from miui_PIPAGlobal_V14.0.11.0.TMZMIXM_50200a003b_13.0
 # All the unpinned blobs are from extracted from LA.UM.9.12.r1-14400-SMxx50.QSSI12.0
 
 # ADSPRPC
@@ -44,10 +44,10 @@ vendor/firmware/a630_sqe.fw|09a86618d0c8282bba3ed85774e9841fb3230826
 vendor/firmware/a650_gmu.bin|c744acb10afb7c980d333c5b6521e2a18993ff14
 vendor/firmware/a650_sqe.fw|130a0df5c562e69ab717867ebc0b7abf6f3bcb3f
 vendor/firmware/a650_zap.b00|8c20cfff20d7fe9814581b353c1f58d38636e8c5
-vendor/firmware/a650_zap.b01|05c86b84046ef9d98f53fd10955afccf6a06cef7
+vendor/firmware/a650_zap.b01|066a402c76cdef07b7cad89294d31ae0f13e194d
 vendor/firmware/a650_zap.b02|270bae014df75a913c6c124155f2cc85706258e6
-vendor/firmware/a650_zap.elf|9b7f63babb17478ad97d1e48f2ed4914f42be132
-vendor/firmware/a650_zap.mdt|013688b38a07b39e710d2b08b51e09d5cf22fa66
+vendor/firmware/a650_zap.elf|21d61378252ea640f7173f96ec7997d8d6c17d38
+vendor/firmware/a650_zap.mdt|561cf0fbf70c56eeb46fad5c43992f7275faf2eb
 
 # ADSP modules - MIUI
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so|1d83da21aeafa15ff327a59e761099910cfec563
@@ -246,9 +246,9 @@ vendor/lib64/camera/com.qti.sensor.pipa_aac_hi846w_front.so|25823afaa2893266a275
 vendor/lib64/camera/com.qti.sensor.pipa_ofilm_ov13b10_wide.so|7efc90ee806e87bc1a0313a5fc34a63067f254ee
 vendor/lib64/camera/com.qti.sensormodule.pipa_aac_hi846w_front.bin|2779e006508542c486a165fd1dc6466e55018e39
 vendor/lib64/camera/com.qti.sensormodule.pipa_ofilm_ov13b10_wide.bin|125b21e36d60fd0665167b6685862a02cf71223b
-vendor/lib64/camera/com.qti.tuned.default.bin|a2f2c5f7dff98678fb062400118d1b2f8c34552c
-vendor/lib64/camera/com.qti.tuned.pipa_aac_hi846w_front.bin|7a22561032ded84d4f470c9e6e42dc9d03859cb3
-vendor/lib64/camera/com.qti.tuned.pipa_ofilm_ov13b10_wide.bin|fda08878458af20a1b38009ef6ea1b9a8c1035d0
+vendor/lib64/camera/com.qti.tuned.default.bin|3280a3a8027fa6fd3ec4306c115f5af6eda29941
+vendor/lib64/camera/com.qti.tuned.pipa_aac_hi846w_front.bin|e57181dd7a3bac87266d3c8cbec6266cc98c94f4
+vendor/lib64/camera/com.qti.tuned.pipa_ofilm_ov13b10_wide.bin|97435e35f2e3c9afa09a2e62c3882818e5af300b
 vendor/lib64/camera/fdconfigpreview.bin|a9f2f5925c713f8c500268ff0fe5c9d4ab46d16e
 vendor/lib64/camera/fdconfigpreviewlite.bin|a9f2f5925c713f8c500268ff0fe5c9d4ab46d16e
 vendor/lib64/camera/fdconfigvideo.bin|a9f2f5925c713f8c500268ff0fe5c9d4ab46d16e
@@ -272,7 +272,7 @@ vendor/lib64/com.qti.feature2.softispsupernight.so|fe7dba4f58efc8fe109823bf558ad
 vendor/lib64/com.qti.feature2.sr.so|458e947aec9852f1ffcd341afc6f685f0586531e
 vendor/lib64/com.qti.feature2.stub.so|740a48550f6ecbfe159fdd9a5ddf343e419a3b38
 vendor/lib64/com.qti.feature2.swmf.so|c73944f4d8b850209004a3cdac1070ce44b20380
-vendor/lib64/hw/camera.qcom.so|7ce40a731051e0b2d9180fe8e5237a58c3f78b81
+vendor/lib64/hw/camera.qcom.so|efcb4b8eaefbfd58f010942ed592e68d6eb22532
 vendor/lib64/hw/com.qti.chi.override.so|78f66c4e6295a73192389726ec2e14a6cc0ad563
 vendor/lib64/libAF.so|32cf285e83de29d669a2e856ac957492a0ea809c
 vendor/lib64/libFaceCenterAlgo.so|d0af9d5b2c37792d431bf2c2f687aabb4578d2a8
@@ -282,6 +282,7 @@ vendor/lib64/libalAILDC.so|035240bfa042b20be8dd8d0ec71c3f43ce367a7b
 vendor/lib64/libalCFR.so|f43298c36502fbd6fdc42ae79f345197eaf87b2d
 vendor/lib64/libalLDC.so|57d7655cfef72214a919c11198c873c78622f490
 vendor/lib64/libalhLDC.so|128c4c25d622559e7b7c1ed3b686e11dd46b3c15
+vendor/lib64/libbeauty_face_interface.so|e3bcd58f33c195d9b2c3a7e4688a80c468d8aa57
 vendor/lib64/libc++_shared.so|ef6cad49e61581e9fa96cae94a8e101077640f78
 vendor/lib64/libcamera_nn_stub.so|020a6cd6cee8e550f87cf39c1496979139a31961
 vendor/lib64/libcamera_scene.so|31c3d29225954ab538af3e1e485e3e0f8c9facbc
@@ -290,6 +291,7 @@ vendor/lib64/libcamlog.so|75b22550cc3cef9c471d8ab2fa6024f281269273
 vendor/lib64/libcapiv2svacnn.so|a3da74de6eba39d25f64db653b00fb14508a43e7
 vendor/lib64/libcapiv2svarnn.so|bb820880a0b282cdbaf5d81c6e357bed732058b3
 vendor/lib64/libcapiv2vop.so|60adcab046df41f115f0b178ca4130ab09c190cf
+vendor/lib64/libcdsprpc_system.so|ead8129ef64c31af1d4bab1595fcadf36d4473ea
 vendor/lib64/libchilog.so|f7f8f395d826f66c5b04f2c25981f0d96ae38ac9
 vendor/lib64/libcom.qti.chinodeutils.so|6db86a66395910a29adbb2fe714e4a9b9410c75b
 vendor/lib64/libdualcam_optical_zoom_control.so|87a0507f8115488666a2a65a6237e80086854d7c
@@ -330,6 +332,7 @@ vendor/lib64/libthreadutils.so|993b2fc98efb61c5842431fb06825abf36e153d2
 vendor/lib64/libtriplecam_optical_zoom_control.so|95acbc486ded083125b0eb241cccc010be3937ae
 vendor/lib64/libvideofilter_only.so|85021f1ad7f6e57e6919481e3078c316dafb44e9
 vendor/lib64/libvidhance.so|dd97e0c8d2307f637750c3bf64e38c99ea319919
+vendor/lib64/libxml2_vendor.so|336de129dd9072f31d8aaee3286e5f10c1bf32fe
 
 # Camera (arcsoft) - MIUI
 vendor/lib64/libarcsoft_beautyshot.so|6286521f8f3680991dafd360852c52b3bc2e1060
@@ -379,30 +382,30 @@ vendor/lib64/camera/components/com.qti.eisv3.so|f0a0b0eb5f54f7eaaa38ab6f8aa2ce7c
 vendor/lib64/camera/components/com.qti.hvx.addconstant.so|a97cd9fbaf111e9803776c62f24a4a6186be1138
 vendor/lib64/camera/components/com.qti.hvx.binning.so|eea14f1d27c139bb3b5ab33237ca365809bc3d3c
 vendor/lib64/camera/components/com.qti.node.dummyrtb.so|a15b6a7ecea93c452c80ec4199bea572eb7bf676
-vendor/lib64/camera/components/com.qti.node.eisv2.so|00981547aa27c5b52eea0321ee52874c75e240b8
-vendor/lib64/camera/components/com.qti.node.eisv3.so|7fbb8df9232bd9a90e17b6b7a704c85609a3d0a5
+vendor/lib64/camera/components/com.qti.node.eisv2.so|d87f3aa10f86bed40efee2b45bdc3234b10aa1e8
+vendor/lib64/camera/components/com.qti.node.eisv3.so|a1e92094c28dca8ce8f9510b391a3f3709d8b4f3
 vendor/lib64/camera/components/com.qti.node.gpu.so|5c050baf610252a0bc60abcec18c6ee082e31a2e
 vendor/lib64/camera/components/com.qti.node.ldc.so|ec67900746237d34190aea0429eb76ade2e251bc
 vendor/lib64/camera/components/com.qti.node.memcpy.so|874f57031e5a80c6d08390582cbc2be81ddd900f
 vendor/lib64/camera/components/com.qti.node.swregistration.so|10a70f0a62b70ddf1f926d6a6145141c3d6e0fe2
 vendor/lib64/camera/components/com.qti.stats.aec.so|5f1e496cb4daa138680bf0fdba7e1bc9b5a5feae
-vendor/lib64/camera/components/com.qti.stats.aecwrapper.so|ccd9152fc6dbf720adbc92951b8554761af2d63d
+vendor/lib64/camera/components/com.qti.stats.aecwrapper.so|a9eedf1e403da163c75e522becb43abf05d00639
 vendor/lib64/camera/components/com.qti.stats.af.so|084c9e2ed4ec4b9f8b87de3687c417c2c88055c0
 vendor/lib64/camera/components/com.qti.stats.afd.so|dac7935eab31ca277acb7dfc0cad36ab19c27f0a
-vendor/lib64/camera/components/com.qti.stats.afwrapper.so|eac31703dbcaf1665520e7b4d02b34529f168de0
+vendor/lib64/camera/components/com.qti.stats.afwrapper.so|8c3845ba8d6cdd4801abecc7586e907d97ade16a
 vendor/lib64/camera/components/com.qti.stats.asd.so|64a87e68101445ae75ba560d4b9a92d909bd14b5
 vendor/lib64/camera/components/com.qti.stats.awb.so|97487c8944b3ad3a7d9cd40f56b70b909a961b64
-vendor/lib64/camera/components/com.qti.stats.awbwrapper.so|ce106238a72ae998ac16dc9c908e48d385622f11
+vendor/lib64/camera/components/com.qti.stats.awbwrapper.so|0fabc1938c37595c01dc807529766c2ee15dc62a
 vendor/lib64/camera/components/com.qti.stats.haf.so|1fa9f3dea9d810e5592cad5274058116f65cae50
 vendor/lib64/camera/components/com.qti.stats.hafoverride.so|e7a799229b236578d57d043022b9d3dcd2dabfc7
 vendor/lib64/camera/components/com.qti.stats.pdlib.so|16c4f3d79ede4a73580b4b2c85ea62eab0ad6f81
 vendor/lib64/camera/components/com.qti.stats.pdlibsony.so|8a3330caa6b3dd1192bdf4fd554e56d923fc3522
 vendor/lib64/camera/components/com.qti.stats.pdlibwrapper.so|ca3dbb55c6566beed14a7b0391b61c9486d43124
 vendor/lib64/camera/components/com.qti.stats.tracker.so|afebf6979fb9ced0325786f6b18949b1df54fd2e
-vendor/lib64/camera/components/com.qtistatic.stats.aec.so|0d06be15c131883801bb352fa7f71a9b0b45dcd2
-vendor/lib64/camera/components/com.qtistatic.stats.af.so|f58800aed6dccb1b78ce081485f163ef796d1847
-vendor/lib64/camera/components/com.qtistatic.stats.awb.so|cbfa1ab372494b3824fc59c1062f33533e183050
-vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so|543f98c9fee766e0cef4715df91bb0f376b36200
+vendor/lib64/camera/components/com.qtistatic.stats.aec.so|f0c045c6bc329ea8e969f918c5343ee792f30b76
+vendor/lib64/camera/components/com.qtistatic.stats.af.so|ceb67940671175d589dc1876b9842de5ae3359ff
+vendor/lib64/camera/components/com.qtistatic.stats.awb.so|36c6f70e8384a26f89da5ec8a0149cc3d332de62
+vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so|5ffeac49f1f69b5d0c4ffd3760918dc9e1b20ab8
 vendor/lib64/camera/components/com.xiaomi.node.ica.so|e8116ec1214101f27ec19aacf01aa5a6029c30c4
 vendor/lib64/camera/components/com.xiaomi.node.mifilter.so|deb73210f271ac7298acf6c42b030f53ecdd3a76
 vendor/lib64/camera/components/libubifocus.so|6b9998f543823fe10ab1becf2c5a86d568a8c9f0
@@ -463,17 +466,17 @@ vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
 # Data - MIUI
 vendor/firmware/ipa_fws.b00|5b8bc4a7ef9f033e836854e21532e8eaf5b73e99
-vendor/firmware/ipa_fws.b01|4b0575c4d651d94aa0ea65286cb52f2475cf19d6
+vendor/firmware/ipa_fws.b01|c472a2de0a00af41ee6100ed0a8fd591bc3ca38c
 vendor/firmware/ipa_fws.b02|6954066d6779502d261f647086a2fd1e38bae16f
 vendor/firmware/ipa_fws.b03|c07cfef57f8f694b4cee41e78700614efbedf2bc
 vendor/firmware/ipa_fws.b04|e20c91f1c7e833886d443bbf0cb33223e303583b
-vendor/firmware/ipa_fws.elf|2beaba7a393d93923734a92c27741a77591cc450
-vendor/firmware/ipa_fws.mdt|943b01fe8fb608de330a14a20e3bb64f065a30ed
+vendor/firmware/ipa_fws.elf|8cbfa1172196089adde64d15cb246054420b74a5
+vendor/firmware/ipa_fws.mdt|59bbfb2eb1d9268ad9c55052928e1a7ec708116e
 vendor/firmware/ipa_uc.b00|c469dae927f8645bdc82adf217a20170f3e5bb9f
-vendor/firmware/ipa_uc.b01|b85a3f101b6c13c5da11b72f06a957c5593011a0
+vendor/firmware/ipa_uc.b01|f028aa73ecbaf5847ea989b9388a27dda0edb9d7
 vendor/firmware/ipa_uc.b02|4c7bcc7e9e5285194d271931d31128a6a6660823
-vendor/firmware/ipa_uc.elf|83d3135ddcea38d3103c0147721d21813984d46c
-vendor/firmware/ipa_uc.mdt|f87e7b2230b361eb0f55577dd0fa34eb878d446e
+vendor/firmware/ipa_uc.elf|ea8e8be701a6ef71a848605f1e272144170bffb2
+vendor/firmware/ipa_uc.mdt|ef455bdec95e886d1e9b82ccbf95aea1f4a685a3
 
 # Diag
 vendor/lib/libdiag.so
@@ -744,7 +747,7 @@ vendor/lib/libsnsapi.so|a9136895c5de6f7363658615d66ccdd608ab5962
 vendor/lib/libsnsdiaglog.so|d5228e5aa306636c72ffa8d49725b8442a34470b
 vendor/lib/libssc.so|a007eda53b95539c0183dc2897ca95c781a2909d
 vendor/lib/libssc_default_listener.so|e3a7b4fe1b4e31afb6fffcf8fd2babf60db1e894
-vendor/lib/libssccalapi.so|810f79daef4410ccd644e8cd99e9c58d59c68a9a
+vendor/lib/libssccalapi.so|74e8b7a4506c575baab704103db96fa3864423c6
 vendor/lib/libultrasound.so|9e286dc7fc5efe7c9916ef2a9cf5611d2486c3f2
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so|733a5b8861bb6eb1285bb8982992531c94800997
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so|c30bb30eecf968e02f72c055d3cc13a7f769644f
@@ -759,7 +762,7 @@ vendor/lib64/libsnsapi.so|4e5dc1755413a6b8e3b0c6753aa2b1d39d7f83d3
 vendor/lib64/libsnsdiaglog.so|e06a5c86eafedd412f5823463af83e89ba33c865
 vendor/lib64/libssc.so|1f95897ef2a482d452d71d242cca7b4f6c4acfba
 vendor/lib64/libssc_default_listener.so|1653233f7454f3be9e8361ab5fde7cd45e9ac9b4
-vendor/lib64/libssccalapi.so|da512116d0b81d9df2260ac10dab09cfdc5da9c9
+vendor/lib64/libssccalapi.so|0a1878a3dfa29368c9ae7644d58e0ddac464510d
 vendor/lib64/libultrasound.so|99ba87b30969ee01026bfe33b2348f0e933fe2b6
 vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so|733a5b8861bb6eb1285bb8982992531c94800997
 vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so|c30bb30eecf968e02f72c055d3cc13a7f769644f
