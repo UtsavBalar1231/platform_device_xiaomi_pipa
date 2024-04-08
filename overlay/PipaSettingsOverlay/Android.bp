@@ -3,5 +3,5 @@
 
 runtime_resource_overlay {
     name: "PipaSettingsOverlay",
-    product_specific: true,
+    device_specific: true,
 }
