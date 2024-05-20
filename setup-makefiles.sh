@@ -2,14 +2,14 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017-2020 The LineageOS Project
-# Copyright (C) 2021 Paranoid Android
+# Copyright (C) 2021-2024 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 set -e
 
-DEVICE=alioth
+DEVICE=pipa
 VENDOR=xiaomi
 
 # Load extract utilities and do some sanity checks.

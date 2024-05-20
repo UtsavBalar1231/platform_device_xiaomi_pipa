@@ -1,2 +1,3 @@
 # Camera sensor properties
 vendor.camera.sensor.                      u:object_r:vendor_camera_sensor_prop:s0
+persist.vendor.EnableP3ColorSpac           u:object_r:vendor_camera_sensor_prop:s0

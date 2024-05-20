@@ -1,0 +1,2 @@
+# Allow perf hal to load perfboost and thermal break configs
+r_dir_file(vendor_hal_perf_default, vendor_thermal_data_file)

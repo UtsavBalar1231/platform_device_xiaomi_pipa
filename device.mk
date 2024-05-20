@@ -1,16 +1,7 @@
-# Copyright (C) 2021 Paranoid Android
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Copyright (C) 2021-2024 Paranoid Android
+# SPDX-License-Identifier: Apache-2.0
 #
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
@@ -33,7 +24,7 @@ PRODUCT_PACKAGES += \
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Attestation
 PRODUCT_COPY_FILES += \
@@ -41,35 +32,31 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.audio.ll_playback_bargein=false \
+    ro.vendor.audio.smartPA.number=4 \
     persist.vendor.audio.delta.refresh=true \
     persist.vendor.audio.misound.disable=true \
     persist.vendor.audio.ring.filter.mask=0 \
     ro.audio.monitorRotation=true \
     ro.config.vc_call_vol_steps=11 \
     ro.vendor.audio.enhance.support=false \
-    ro.vendor.audio.gain.support=true \
-    ro.vendor.audio.karaok.support=true \
+    ro.vendor.audio.gain.support=false \
+    ro.vendor.audio.karaok.support=false \
     ro.vendor.audio.ns.support=false \
     ro.vendor.audio.scenario.support=true \
     ro.vendor.audio.soundfx.type=mi \
     ro.vendor.audio.soundfx.usb=true \
     ro.vendor.audio.support.sound.id=true \
-    ro.vendor.audio.us.proximity=true \
-    ro.vendor.audio.us.type=mius \
-    ro.vendor.audio.zoom.support=true \
+    ro.vendor.audio.zoom.support=false \
     ro.vendor.audio.zoom.type=1 \
     vendor.audio.spkcal.copy.inhal=true \
     vendor.audio.usb.disable.sidetone=true
 
 PRODUCT_ODM_PROPERTIES += \
-    aaudio.mmap_policy=1 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.audio.adm.buffering.ms=6 \
     vendor.audio.feature.dynamic_ecns.enable=false \
     vendor.audio.feature.spkr_prot.enable=false \
-    vendor.audio.hal.output.suspend.supported=false \
-    vendor.audio.offload.multiple.enabled=true \
-    vendor.audio.offload.track.enable=false
+    vendor.audio.hal.output.suspend.supported=false
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -111,8 +98,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt \
-    $(LOCAL_PATH)/configs/camera/st_license.lic:$(TARGET_COPY_OUT_VENDOR)/etc/camera/st_license.lic
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/camera/,$(TARGET_COPY_OUT_VENDOR)/etc/camera)
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -127,9 +113,6 @@ PRODUCT_PACKAGES += \
 
 # Charging
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.cp.fcc_main_ua=400000 \
-    persist.vendor.cp.taper_term_mv=7000 \
-    persist.vendor.cp.qc3p5_vfloat_offset_uv=110000 \
     persist.vendor.pps.disallowed=1 \
     persist.vendor.hvdcp_opti.disallowed=1
 
@@ -137,37 +120,24 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# Consumer IR
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    android.hardware.ir@1.0-service
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.display.paneltype=2 \
     ro.vendor.display.sensortype=2 \
     vendor.display.qdcm.mode_combine=1 \
-    vendor.display.use_layer_ext=1 \
-    vendor.display.defer_fps_frame_count=2
+    vendor.display.use_layer_ext=0
+
+PRODUCT_ODM_PROPERTIES += \
+    vendor.display.comp_mask=2 \
+    vendor.display.use_smooth_motion=0
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=4000 \
     ro.surface_flinger.set_touch_timer_ms=4000 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
-# DPM
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.dpmhalservice.enable=1
 
 # DRM
 PRODUCT_VENDOR_PROPERTIES += \
@@ -180,12 +150,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Fingerprint
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/fingerprint/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/fingerprint/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -197,8 +161,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Gboard paddings
 # Keyboard height ratio and bottom padding in dp for portrait mode
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.ime.height_ratio=1.075 \
-    ro.com.google.ime.kb_pad_port_b=8
+    ro.com.google.ime.height_ratio=1.0 \
+    ro.com.google.ime.kb_pad_port_b=10.4
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -206,12 +170,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.alioth.rc \
+    init.pipa.rc \
     init.mi.btmac.sh \
     init.mi.usb.sh \
     init.qti.dcvs.sh \
     init.target.rc \
-    ueventd.alioth.rc
+    ueventd.pipa.rc
 
 # Keymaster
 PRODUCT_VENDOR_PROPERTIES += \
@@ -224,28 +188,17 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# NFC
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # Overlays
 PRODUCT_PACKAGES += \
-    AliothCarrierConfig \
-    AliothFrameworks \
-    AliothNfc \
-    AliothSettings \
-    AliothSystemUI \
-    AOSPAAliothFrameworks \
-    AOSPAAliothSystemUI \
+    AOSPAPipaFrameworks \
+    AOSPAPipaSystemUI \
     FrameworksResTarget \
-    SettingsOverlayM2012K11AG \
-    SettingsOverlayM2012K11AI \
-    SettingsProviderM2012K11AC \
-    SettingsProviderM2012K11AG \
-    SettingsProviderM2012K11AI \
-    WifiOverlayM2012K11AC \
-    WifiOverlayM2012K11AG \
-    WifiOverlayM2012K11AI \
+    PipaFrameworks \
+    PipaSettings \
+    PipaSettingsOverlay \
+    PipaSettingsProvider \
+    PipaSystemUI \
+    PipaWifiOverlay \
     WifiResTarget
 
 # Partitions
@@ -254,13 +207,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := kona
 
-# QCRIL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.radio.cdma_cap=true \
-    persist.vendor.radio.data_con_rprt=1 \
-    persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.force_ltd_sys_ind=1 \
-    persist.vendor.radio.manual_nw_rej_ct=1
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml \
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tablet_core_hardware.xml
 
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
@@ -271,21 +220,18 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     charging \
     display \
-    gps \
+    gps-legacy \
     init \
     media \
-    nfc \
     overlay \
     perf \
-    telephony \
     usb \
     wfd \
     wlan
 
-TARGET_NFC_SKU := pro
-
 # Sensors
 PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.sensors.amd_for_powercontrol=true \
     persist.vendor.sensors.allow_non_default_discovery=true \
     persist.vendor.sensors.sync_request=true
 
@@ -294,10 +240,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
@@ -307,10 +251,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl-xiaomi \
     android.hardware.sensors@1.0-service \
+    libjson \
     libsensorndkbridge
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # SoC Property
 PRODUCT_VENDOR_PROPERTIES += \
@@ -318,10 +263,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Storage
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.fuse.passthrough.enable=true \
     ro.incremental.enable=yes
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Subsystem silent restart
 PRODUCT_VENDOR_PROPERTIES += \
@@ -342,25 +284,19 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
+$(call inherit-product, vendor/xiaomi/pipa/pipa-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
-# Vibrator
-$(call inherit-product, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk)
-
 # VNDK
 PRODUCT_PACKAGES += \
+    android.hardware.wifi.hostapd@1.0.vendor \
     android.hardware.drm@1.4.vendor \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@4.1.vendor \
-    android.hardware.neuralnetworks@1.3.vendor \
-
-# VPP tunings
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/tunings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/tunings.txt
+    android.hardware.neuralnetworks@1.3.vendor
 
 # WLAN
 PRODUCT_COPY_FILES += \

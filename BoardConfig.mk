@@ -1,18 +1,9 @@
-# Copyright (C) 2021 Paranoid Android
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Copyright (C) 2021-2024 Paranoid Android
+# SPDX-License-Identifier: Apache-2.0
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
-DEVICE_PATH := device/xiaomi/alioth
+DEVICE_PATH := device/xiaomi/pipa
 
 # A/B
 AB_OTA_UPDATER := true
@@ -72,7 +63,7 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x546C00000000
 TARGET_NO_RAW10_CUSTOM_FORMAT := true
-TARGET_SCREEN_DENSITY := 440
+TARGET_SCREEN_DENSITY := 340
 
 # Gestures
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
@@ -88,21 +79,18 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest.xml \
     $(DEVICE_PATH)/configs/vintf/xiaomi_manifest.xml
 
-ODM_MANIFEST_SKUS := pro
-
-ODM_MANIFEST_PRO_FILES := \
-    $(DEVICE_PATH)/configs/vintf/manifest-nfc.xml
-
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_alioth
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_pipa
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
+BOARD_SELINUX_ENFORCING := false # REMOVE THIS
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive # REMOVE THIS
+BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
     androidboot.init_fatal_reboot_target=recovery \
@@ -123,9 +111,9 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_RAMDISK_USE_LZ4 := true
 
-KERNEL_DEFCONFIG := alioth_defconfig
+KERNEL_DEFCONFIG := vendor/pipa_user_defconfig
 
-KERNEL_LLVM_SUPPORT := true
+KERNEL_FULL_LLVM := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -135,12 +123,11 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x6000000
 BOARD_DTBOIMG_PARTITION_SIZE := 0x0800000
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x6400000
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122805504 # BOARD_SUPER_PARTITION_SIZE - 4MB
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # BOARD_SUPER_PARTITION_SIZE - 4MB
 
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
@@ -164,8 +151,7 @@ BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_MARGIN_HEIGHT := 75
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SEPolicy
--include device/xiaomi/alioth/sepolicy/alioth-sepolicy.mk
+-include device/xiaomi/pipa/sepolicy/pipa-sepolicy.mk

@@ -1,0 +1,2 @@
+# Allow ueventd to read the nv_mac.bin
+allow ueventd vendor_persist_wcnss_service_file:file r_file_perms;
