@@ -31,6 +31,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
 # Audio
+PRODUCT_PACKAGES += \
+    XiaomiDolby
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio.ll_playback_bargein=false \
     ro.vendor.audio.smartPA.number=4 \
