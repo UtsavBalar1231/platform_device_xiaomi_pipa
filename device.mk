@@ -129,6 +129,13 @@ PRODUCT_ODM_PROPERTIES += \
     vendor.display.comp_mask=2 \
     vendor.display.use_smooth_motion=0
 
+# Display orientation
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.primary_display_orientation=ORIENTATION_0 \
+    debug.sf.ignore_hwc_physical_display_orientation=true \
+    ro.bootanim.set_orientation_4630946808805831297=ORIENTATION_90 \
+    ro.bootanim.set_orientation_4630946922172900481=ORIENTATION_90
+
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=4000 \
     ro.surface_flinger.set_touch_timer_ms=4000 \
