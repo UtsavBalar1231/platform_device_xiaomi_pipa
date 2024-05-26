@@ -19,4 +19,7 @@
     <!-- Whether to show a preference item for regulatory information in About phone -->
     <bool name="config_show_regulatory_info">true</bool>
 
+    <!-- Whether sim related information is visible to the end user. -->
+    <bool name="config_show_sim_info">false</bool>
+
 </resources>
