@@ -400,4 +400,7 @@
     <!-- The default volume for the notification stream -->
     <integer name="config_audio_notif_vol_default">0</integer>
 
+    <!-- Volume policy -->
+    <bool name="config_volume_down_to_enter_silent">true</bool>
+
 </resources>
