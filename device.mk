@@ -35,23 +35,30 @@ PRODUCT_PACKAGES += \
     XiaomiDolby
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.audio.ll_playback_bargein=false \
-    ro.vendor.audio.smartPA.number=4 \
     persist.vendor.audio.delta.refresh=true \
+    persist.vendor.audio.ll_playback_bargein=false \
     persist.vendor.audio.misound.disable=true \
     persist.vendor.audio.ring.filter.mask=0 \
     ro.audio.monitorRotation=true \
     ro.config.vc_call_vol_steps=11 \
+    ro.vendor.audio.dolby.dax.support=true \
+    ro.vendor.audio.dolby.fade_switch=true \
+    ro.vendor.audio.dolby.surround.enable=true \
     ro.vendor.audio.enhance.support=false \
     ro.vendor.audio.gain.support=false \
     ro.vendor.audio.karaok.support=false \
     ro.vendor.audio.ns.support=false \
     ro.vendor.audio.scenario.support=true \
+    ro.vendor.audio.smartPA.number=4 \
     ro.vendor.audio.soundfx.type=mi \
     ro.vendor.audio.soundfx.usb=true \
     ro.vendor.audio.support.sound.id=true \
     ro.vendor.audio.zoom.support=false \
     ro.vendor.audio.zoom.type=1 \
+    vendor.audio.dolby.control.support=true \
+    vendor.audio.dolby.control.tunning.by.volume.support=true \
+    vendor.audio.dolby.ds2.enabled=false \
+    vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.spkcal.copy.inhal=true \
     vendor.audio.usb.disable.sidetone=true
 
