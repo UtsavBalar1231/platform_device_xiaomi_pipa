@@ -21,4 +21,8 @@
 
     <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
     <string translatable="false" name="def_device_name_simple">Pad 6</string>
+
+	<!-- set default screen rotation to 90 degrees, 1 refers to value of android.view.Surface.ROTATION_90 -->
+	<integer name="def_user_rotation">1</integer>
+
 </resources>
