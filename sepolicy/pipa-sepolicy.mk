@@ -30,3 +30,7 @@ BOARD_SEPOLICY_DIRS += \
 # Additional QCOM Sepolicay
 BOARD_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/qcom
+
+# Xiaomi Public Sepolicy
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/public/xiaomi/touchfeature
