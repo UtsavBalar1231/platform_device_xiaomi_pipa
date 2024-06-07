@@ -1,0 +1,6 @@
+# Allow xiaomiparts_app to create uevent socket
+allow xiaomiparts_app self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Allow xiaomiparts_app to read pen charging status
+r_dir_file(xiaomiparts_app, vendor_sysfs_battery_supply);
+allow xiaomiparts_app vendor_sysfs_battery_supply:file r_file_perms;

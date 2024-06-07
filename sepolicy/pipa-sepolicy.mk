@@ -23,14 +23,21 @@ BOARD_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/sensors \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/thermald \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/touch \
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/touchfeature \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/usb \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/wireless \
-    device/xiaomi/pipa/sepolicy/vendor/xiaomi/wlan
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/wlan \
+    device/xiaomi/pipa/sepolicy/vendor/xiaomiparts
 
-# Additional QCOM Sepolicay
+# Additional QCOM Sepolicy
 BOARD_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/qcom
 
+# Xiaomi Private Sepolicy
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/xiaomiparts
+
 # Xiaomi Public Sepolicy
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/xiaomi/pipa/sepolicy/public/xiaomi/touchfeature
+    device/xiaomi/pipa/sepolicy/public/xiaomi/touchfeature \
+    device/xiaomi/pipa/sepolicy/public/xiaomi/xiaomiparts
