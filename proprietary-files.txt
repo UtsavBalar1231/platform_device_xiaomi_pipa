@@ -320,13 +320,14 @@ vendor/lib64/libthirdpartpkg.so|ea6e96a63dce80cc65f7459d6eb8a2deb730035f
 vendor/lib64/libthreadutils.so|0d0645c45adc7cf4a156daae3501830ce80f406c
 vendor/lib64/libtriplecam_optical_zoom_control.so|95acbc486ded083125b0eb241cccc010be3937ae
 vendor/lib64/libvideofilter_only.so|85021f1ad7f6e57e6919481e3078c316dafb44e9
+vendor/lib64/libvidhance.so|dd97e0c8d2307f637750c3bf64e38c99ea319919
 vendor/lib64/libvidhance_active_ois.so|3d476cb0f7832b81334b37ec872ad29b668910c9
 vendor/lib64/libvidhance_face_stabilizer.so|c00da0d860c284e7f3e84480bd6517d1052770f8
 vendor/lib64/libvidhance_horizon_correction.so|d67079de03d46ee71b17757b17cbdf26bba7fef0
 vendor/lib64/libvidhance_ldc.so|b64e79d1bb275180f424b37e920f17887bfb5895
-vendor/lib64/libvidhance.so|dd97e0c8d2307f637750c3bf64e38c99ea319919
 vendor/lib64/libvidhance_stabilizer.so|89161f05189530581bbe965c5fb0be4f60f64f28
 vendor/lib64/libvidhance_super_stabilization.so|18cdf22b64570aa2bf281692b9d91acc9367ce63
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|08ad0bcdc02be56c91a60ea88c54e32d7d55f12e
 
 # Camera (arcsoft) - MIUI
 vendor/lib64/libarcsoft_beautyshot.so|34cb2f7665ef9c0abe858c06ed63dac4e58c5450
@@ -491,9 +492,6 @@ vendor/etc/camera/xiaomiSceneDetection.xml|6d5b73323f5571e74d38f519fd6c2048f1323
 
 # Camera (firmware) - MIUI
 vendor/firmware/CAMERA_ICP.elf|01c99ec883dea12ba5c182bfebf081b8f21d1d38
-
-# Camera (postproc) - from LA.UM.9.14.r1-22000-LAHAINA.QSSI12.0
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|74925f9b11de9721aa9b8dfa4b94f7c87a8baf33
 
 # Camera (sensors) - MIUI
 vendor/lib64/libmmcamera_faceproc.so|9f12fe5b6671fbf4183051e201bda21ed7dc5dbe
