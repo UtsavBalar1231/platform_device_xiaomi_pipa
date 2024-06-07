@@ -1,0 +1,2 @@
+# Xiaomi MM hardware
+type sysfs_mmhardware, fs_type, sysfs_type;
