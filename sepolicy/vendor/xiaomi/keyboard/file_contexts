@@ -1,0 +1,2 @@
+# Xiaomi Keyboard sysfs
+/sys/devices/0006:15D9:00A[0-9].000[0-9]/country    u:object_r:sysfs_xiaomi_keyboard:s0
