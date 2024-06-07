@@ -142,7 +142,6 @@ PRODUCT_ODM_PROPERTIES += \
 # Display orientation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.primary_display_orientation=ORIENTATION_0 \
-    debug.sf.ignore_hwc_physical_display_orientation=true \
     ro.bootanim.set_orientation_4630946808805831297=ORIENTATION_90 \
     ro.bootanim.set_orientation_4630946922172900481=ORIENTATION_90
 
