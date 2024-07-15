@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Paranoid Android
+# Copyright (C) 2021-2024 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# QCOM Sepolicy
-BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/xiaomi/pipa/sepolicy/vendor/qcom
-
 # Xiaomi Sepolicy
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/xiaomi/pipa/sepolicy/private/xiaomi/devicesettings \
-    device/xiaomi/pipa/sepolicy/private/xiaomi/display
-
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/xiaomi/pipa/sepolicy/public/xiaomi/devicesettings \
-    device/xiaomi/pipa/sepolicy/public/xiaomi/touchfeature
-
-BOARD_VENDOR_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/audio \
-    device/xiaomi/pipa/sepolicy/vendor/xiaomi/battery \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/bluetooth \
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/battery \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/camera \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/dolby \
-    device/xiaomi/pipa/sepolicy/vendor/xiaomi/modem \
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/keyboard \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/peripheralmanager \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/power_supply \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/sensors \
@@ -40,4 +28,21 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/touchfeature \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/usb \
     device/xiaomi/pipa/sepolicy/vendor/xiaomi/wireless \
-    device/xiaomi/pipa/sepolicy/vendor/xiaomi/wlan
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/wlan \
+    device/xiaomi/pipa/sepolicy/vendor/xiaomi/xiaomiparts
+
+# Additional QCOM Sepolicy
+BOARD_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/vendor/qcom
+
+# Xiaomi Private Sepolicy
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/display \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/peripheralmanager \
+    device/xiaomi/pipa/sepolicy/private/xiaomi/xiaomiparts
+
+# Xiaomi Public Sepolicy
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    device/xiaomi/pipa/sepolicy/public/xiaomi/touchfeature \
+    device/xiaomi/pipa/sepolicy/public/xiaomi/peripheralmanager \
+    device/xiaomi/pipa/sepolicy/public/xiaomi/xiaomiparts

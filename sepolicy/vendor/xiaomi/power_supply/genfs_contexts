@@ -1,7 +1,12 @@
 # Xiaomi power supply sysfs
-genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-0041/power_supply                                                              u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16_slave/power_supply                                                              u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply                                                                    u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/888000.i2c/i2c-6/6-0066/power_supply                                                              u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qpnp,fg/power_supply           u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply    u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/888000.i2c/i2c-6/6-0066/power_supply/bq2597x-standalone       	u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-0041/power_supply/fuda 				      	u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify 			      	u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16_slave/power_supply/batt_verify_slave       	u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless u:object_r:vendor_sysfs_battery_supply:s0
+
+genfscon sysfs /devices/platform/soc/888000.i2c/i2c-6/6-0066/power_supply/bq2597x-standalone/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-0041/power_supply/fuda/wakeup               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify/wakeup 		        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16_slave/power_supply/batt_verify_slave/wakeup 	u:object_r:sysfs_wakeup:s0

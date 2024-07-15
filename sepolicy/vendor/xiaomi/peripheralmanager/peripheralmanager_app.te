@@ -1,0 +1,13 @@
+# Allow peripheralmanager_app to create uevent socket
+allow peripheralmanager_app self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Allow peripheralmanager_app to read pen charging status
+r_dir_file(peripheralmanager_app, vendor_sysfs_battery_supply);
+allow peripheralmanager_app vendor_sysfs_battery_supply:file r_file_perms;
+
+# Allow peripheralmanager_app to call hal_touchfeature_xiaomi_default
+allow peripheralmanager_app hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+binder_call(peripheralmanager_app, hal_touchfeature_xiaomi_default)
+
+# Set vendor pen property
+set_prop(peripheralmanager_app, vendor_pen_prop)

@@ -1,0 +1,2 @@
+# Ignore denials while trying to load audio firmware file
+dontaudit kernel vendor_persist_audio_file:file r_file_perms;

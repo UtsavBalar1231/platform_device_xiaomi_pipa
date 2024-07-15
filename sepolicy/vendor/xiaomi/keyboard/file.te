@@ -1,0 +1,2 @@
+# Xiaomi Keyboard sysfs
+type sysfs_xiaomi_keyboard, fs_type, sysfs_type;

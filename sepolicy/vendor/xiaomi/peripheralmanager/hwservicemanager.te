@@ -1,1 +1,2 @@
+# Allow hwservicemanager to be called by xiaomi_keyboard
 binder_call(hwservicemanager, xiaomi_keyboard)

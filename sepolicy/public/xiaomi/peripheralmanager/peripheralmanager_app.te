@@ -1,0 +1,4 @@
+# Peripheral Manager Appdomain
+type peripheralmanager_app, domain;
+typeattribute peripheralmanager_app mlstrustedsubject;
+

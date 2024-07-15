@@ -1,0 +1,2 @@
+# Xiaomi MM hardware sysfs
+genfscon sysfs /mm_hardware    u:object_r:sysfs_mmhardware:s0
