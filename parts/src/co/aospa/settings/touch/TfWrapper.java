@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.xiaomiperipheralmanager;
+package co.aospa.settings.touch;
 
 import android.os.IHwBinder.DeathRecipient;
 import android.util.Log;
@@ -14,17 +14,18 @@ import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 public class TfWrapper {
 
     private static final String TAG = "XiaomiPartsTouchFeatureWrapper";
+    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     private static ITouchFeature mTouchFeature;
 
     private static DeathRecipient mDeathRecipient = (cookie) -> {
-        Log.d(TAG, "serviceDied");
+        if (DEBUG) Log.d(TAG, "serviceDied");
         mTouchFeature = null;
     };
 
     public static ITouchFeature getTouchFeature() {
         if (mTouchFeature == null) {
-            Log.d(TAG, "getTouchFeature: mTouchFeature=null");
+            if (DEBUG) Log.d(TAG, "getTouchFeature: mTouchFeature=null");
             try {
                 mTouchFeature = ITouchFeature.getService();
                 mTouchFeature.asBinder().linkToDeath(mDeathRecipient, 0);
@@ -41,7 +42,7 @@ public class TfWrapper {
             Log.e(TAG, "setTouchFeatureParams: touchfeature is null!");
             return;
         }
-        Log.d(TAG, "setTouchFeatureParams: " + params);
+        if (DEBUG) Log.d(TAG, "setTouchFeatureParams: " + params);
         try {
             touchfeature.setTouchMode(params.mode, params.value);
         } catch (Exception e) {

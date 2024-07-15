@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.xiaomiperipheralmanager;
+package co.aospa.settings.peripheral;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -30,8 +30,7 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 import com.android.settingslib.widget.MainSwitchPreference;
 
-import org.lineageos.xiaomiperipheralmanager.PenUtils;
-import org.lineageos.xiaomiperipheralmanager.R;
+import co.aospa.settings.R;
 
 public class StylusSettingsFragment extends PreferenceFragment implements
         SharedPreferences.OnSharedPreferenceChangeListener {
@@ -67,16 +66,7 @@ public class StylusSettingsFragment extends PreferenceFragment implements
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreference, String key) {
         if (STYLUS_KEY.equals(key)) {
-            forceStylus(mStylusPreference.getBoolean(key, false));
+            // kjgkjhgj
         }
-    }
-
-    private void forceStylus(boolean status) {
-        mStylusPreference.edit().putBoolean(STYLUS_KEY, status).apply();
-
-        if (status)
-            PenUtils.enablePenMode();
-       else
-            PenUtils.disablePenMode();
     }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.xiaomiperipheralmanager;
+package co.aospa.settings.peripheral;
 
 import android.os.Bundle;
 
